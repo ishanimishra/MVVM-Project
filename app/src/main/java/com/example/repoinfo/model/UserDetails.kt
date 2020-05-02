@@ -19,3 +19,6 @@ data class Owner(
     val type: String,
     val site_admin: String
 ) : Parcelable
+
+
+

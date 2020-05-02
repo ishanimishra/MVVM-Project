@@ -10,7 +10,7 @@ import com.example.repoinfo.model.UserDetails
 import kotlinx.android.synthetic.main.repo_list.view.*
 
 
-class UserAdapter(val users : List<UserDetails>, var clickListener: onUserItemClickListener) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(var users : List<UserDetails>, var clickListener: onUserItemClickListener) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         return UserViewHolder(
@@ -23,6 +23,11 @@ class UserAdapter(val users : List<UserDetails>, var clickListener: onUserItemCl
     }
 
     override fun getItemCount(): Int = users.size
+
+    fun setResults(results: UserDetails) {
+        this.users = listOf(results)
+        notifyDataSetChanged()
+    }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = users[position]
