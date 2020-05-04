@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.repo_list.view.*
 
 class UserAdapter(var users : List<UserDetails>, var clickListener: onUserItemClickListener) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         return UserViewHolder(
             LayoutInflater.from(parent.context).inflate(
@@ -45,9 +46,9 @@ class UserAdapter(var users : List<UserDetails>, var clickListener: onUserItemCl
         var UserDescription = view.description
 
         fun initialize(users: UserDetails, action: onUserItemClickListener) {
-            UserName.text = users.name
-            UserLogin.text = users.owner.login
-            UserDescription.text = users.description
+            UserName.text = "Name: " + users.name
+            UserLogin.text = "Login: " + users.owner.login
+            UserDescription.text = "Description: " + users.description
             //Glide.with(view.context).load(users.owner.avatar_url).into(imageView)
 
             view.setOnClickListener {

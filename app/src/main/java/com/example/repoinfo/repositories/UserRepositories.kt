@@ -33,8 +33,6 @@ class UserRepositories {
         return userDetailsResponseLiveData
     }
 
-    //var rawBookRepository: view? = null
-
     fun init() {
         getUserProperties()
     }
